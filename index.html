@@ -2,22 +2,25 @@
     <head></head>
     <style>
         .content {
-          max-width: 500px;
+          max-width: 1000px;
           margin: auto;
           background-image: url('vivekproj.jpg');
         }
         h1{
             padding-top: 50px;
             padding-bottom: 50px;
-            padding-left: 20px;
+            padding-left: 280px;
             color:crimson;
         }
 
+ul li{
+  display: inline;
+}
         </style>
        
     <body class="content">
         <h1> REGISTRATION SYSTEM</h1>
-        <label style="padding-left: -40px;"for=""><b>Enter the number of requests:</b></label>
+        <label style="padding-left: 265px;"for=""><b>Enter the number of requests:</b></label>
         <input id="num" type="number" >
         <button type="submit" onclick="myFunction()">Submit</button>
         <div id="strs">
@@ -28,8 +31,14 @@
         </div>
         <footer>
             <br>
-            <p style="padding-left:75px;">Design Credits: <a target="_blank" href="https://www.linkedin.com/in/edula-vivekananda-reddy-3a842921a/">Edula Vivekananda Reddy</a><br>
-          
+            <p style="padding-left:340px; color:rgb(255, 0, 144)"><b>Under the Guidance of Prof. M.Ramesh sir</b><br>
+            <p style="padding-left:305px;"><b>Design Credits: </b><a target="_blank" href="https://www.linkedin.com/in/edula-vivekananda-reddy-3a842921a/">Edula Vivekananda Reddy(2200030038)</a><br>
+                <ul  style="padding-left:160px;">
+                    <li><b>Team Details: </b></li>
+                    <li>S.Karthik(2200030044) &nbsp;&nbsp;</li>
+                    <li>Pavan Adithya(2200030045)&nbsp;&nbsp;</li>
+                    <li>Suhruth Gurram(2200030086)&nbsp;&nbsp;</li>
+                </ul>
           </footer>
     </body>
    
@@ -41,9 +50,9 @@
         str=document.getElementById("strs")
         document.getElementById("strs").innerHTML="";
          for(var x=0;x<n;x++){
-            str.innerHTML+='<br><label><b>Enter string-'+(x+1)+': </b></label> <input class="ins" id="'+(x+1)+'" type="text" size="43"><br>';
+            str.innerHTML+='<br><label style="padding-left:270px;"><b>Enter string-'+(x+1)+': </b></label> <input class="ins" id="'+(x+1)+'" type="text" size="43"><br>';
          }
-         str.innerHTML+='<br><button onclick="giveOutput()" type="submit">Submit Passwords</button>';
+         str.innerHTML+='<div style="padding-left:440px;"><br><button  onclick="giveOutput()" type="submit">Submit Passwords</button></div>';
                  }
         
         function giveOutput(){
@@ -79,13 +88,13 @@
                 }
                 dups.push(strings[x])
             }
-            
+          
          }
          var ds=""
          for(var s=0;s<ans.length;s++){
                    ds+=ans[s]+"<br>";
          }
-         document.getElementById("op").innerHTML='<h3 style="color:green">Output: </h3><p>'+ds+'</p>';
+         document.getElementById("op").innerHTML='<h3 style="color:green;padding-left:270px;">Output: </h3><p style="padding-left:270px;">'+ds+'</p>';
 
 
 
@@ -96,4 +105,6 @@
         </script>
   
 </html>
+
+
 
