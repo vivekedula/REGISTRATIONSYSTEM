@@ -1,0 +1,99 @@
+<html>
+    <head></head>
+    <style>
+        .content {
+          max-width: 500px;
+          margin: auto;
+          background-image: url('vivekproj.jpg');
+        }
+        h1{
+            padding-top: 50px;
+            padding-bottom: 50px;
+            padding-left: 20px;
+            color:crimson;
+        }
+
+        </style>
+       
+    <body class="content">
+        <h1> REGISTRATION SYSTEM</h1>
+        <label style="padding-left: -40px;"for=""><b>Enter the number of requests:</b></label>
+        <input id="num" type="number" >
+        <button type="submit" onclick="myFunction()">Submit</button>
+        <div id="strs">
+
+        </div>
+        <div id="op">
+
+        </div>
+        <footer>
+            <br>
+            <p style="padding-left:75px;">Design Credits: <a target="_blank" href="https://www.linkedin.com/in/edula-vivekananda-reddy-3a842921a/">Edula Vivekananda Reddy</a><br>
+          
+          </footer>
+    </body>
+   
+        <script>
+        function myFunction() {
+         var n = document.getElementById("num").value;
+         console.log(n);
+         
+        str=document.getElementById("strs")
+        document.getElementById("strs").innerHTML="";
+         for(var x=0;x<n;x++){
+            str.innerHTML+='<br><label><b>Enter string-'+(x+1)+': </b></label> <input class="ins" id="'+(x+1)+'" type="text" size="43"><br>';
+         }
+         str.innerHTML+='<br><button onclick="giveOutput()" type="submit">Submit Passwords</button>';
+                 }
+        
+        function giveOutput(){
+         var n = document.getElementsByClassName("ins");
+         var l=n.length;
+         
+         z=0;
+         var strings=[];
+         var ans=[]
+         for(var k=0;k<l;k++){
+            if(document.getElementById((k+1).toString()).value.length == 0){
+                document.getElementById("op").innerHTML="<br><label style='color:red'><b>Error! Enter all string values and submit !!</b></label>"
+                z=1;
+            }
+            strings.push(document.getElementById((k+1).toString()).value);
+         }
+         if(z==0){
+            document.getElementById("op").innerHTML=""
+            var dups=[]
+           
+            for(var x=0;x<strings.length;x++){
+                cnt=0;
+                for(var y=0;y<dups.length;y++){
+                       if(strings[x]==dups[y]){
+                        cnt+=1;
+                       }
+                }
+                if(cnt==0){
+                  ans.push("OK")
+                }
+                else{
+                    ans.push(strings[x]+cnt)
+                }
+                dups.push(strings[x])
+            }
+            
+         }
+         var ds=""
+         for(var s=0;s<ans.length;s++){
+                   ds+=ans[s]+"<br>";
+         }
+         document.getElementById("op").innerHTML='<h3 style="color:green">Output: </h3><p>'+ds+'</p>';
+
+
+
+         console.log(ans);
+                 }
+
+        
+        </script>
+  
+</html>
+
